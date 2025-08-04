@@ -22,7 +22,6 @@ const App = () => {
     .split("")
     .every((letter) => guessedLetter.includes(letter));
   const isGameOver = isGameLost || isGameWon;
-  const revealLetters = isGameLost;
 
   const addGuessedLetter = (letter) => {
     setGuessedLetter((prevGuesses) =>
@@ -77,19 +76,13 @@ const App = () => {
         )}
         {isGameWon && (
           <>
-            <h2 className="font-medium text-xl md:text-2xl">
-              You Win!
-            </h2>
-            <p className="font-medium text-base md:text-lg">
-              Well Done! 🎉
-            </p>
+            <h2 className="font-medium text-xl md:text-2xl">You Win!</h2>
+            <p className="font-medium text-base md:text-lg">Well Done! 🎉</p>
           </>
         )}
         {isGameLost && (
           <>
-            <h2 className="font-medium text-xl md:text-2xl">
-              Game Over!
-            </h2>
+            <h2 className="font-medium text-xl md:text-2xl">Game Over!</h2>
             <p className="font-medium text-base md:text-lg">
               You lose! Better start learning Assembly 😭
             </p>
@@ -193,12 +186,14 @@ const App = () => {
 
       {/* New Game Button */}
       {isGameOver && (
-        <button
-          onClick={resetGame}
-          className="mt-10 bg-[#11B5E5] border border-[#D7D7D7] rounded-md text-[#1E1E1E] font-semibold text-base sm:text-lg px-10 sm:px-16 py-2"
-        >
-          New Game
-        </button>
+        <div className="z-0 flex items-center justify-center">
+          <button
+            onClick={resetGame}
+            className="reset-game mt-10 bg-[#11B5E5] rounded-md text-[#1E1E1E] font-semibold text-base sm:text-lg px-10 sm:px-16 py-2"
+          >
+            New Game
+          </button>
+        </div>
       )}
     </main>
   );

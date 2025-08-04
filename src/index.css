@@ -47,3 +47,50 @@ body {
   white-space: nowrap;
   border: 0;
 }
+
+.reset-game {
+  position: relative;
+  border: none;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.reset-game::before,
+.reset-game::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 2px;
+  translate: -50% -51%;
+  box-sizing: content-box;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(
+    from var(--angle),
+    #008cff,
+    #ed79fc,
+    #008cff
+  );
+  border-radius: 6px;
+  animation: 3s spin linear infinite;
+  z-index: -1;
+}
+
+.reset-game::after {
+  filter: blur(0.5rem);
+  opacity: 0.5;
+}
+
+@keyframes spin {
+  to {
+    --angle: 0deg;
+  }
+  from {
+    --angle: 360deg;
+  }
+}
