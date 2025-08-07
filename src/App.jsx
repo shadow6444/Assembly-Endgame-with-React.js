@@ -29,7 +29,7 @@ const App = () => {
     );
   };
 
-  let alphabets = "abcdefghijklmnopqrstuvwxyz";
+  const alphabets = "abcdefghijklmnopqrstuvwxyz";
 
   const latestWrongLetter =
     guessedLetter[guessedLetter.length - 1] &&
