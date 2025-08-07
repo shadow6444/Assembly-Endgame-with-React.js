@@ -1,4 +1,4 @@
-# 🕹️ Assembly Endgame
+# 🕹️ Assembly Endgame with React.js
 
 **Assembly Endgame** is a word-guessing game inspired by classic word search mechanics, with a programming twist.
 
